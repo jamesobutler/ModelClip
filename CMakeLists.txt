@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.7)
 #-----------------------------------------------------------------------------
 if(NOT Slicer_SOURCE_DIR)
   set(EXTENSION_NAME ModelClip)
-  set(EXTENSION_HOMEPAGE "http://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Extensions/ModelClip")
+  set(EXTENSION_HOMEPAGE "https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Extensions/ModelClip")
   set(EXTENSION_CATEGORY "Surface Models")
   set(EXTENSION_CONTRIBUTORS "Jun LIN, Xiaojun CHEN, Ph.D (SJTU)")
   set(EXTENSION_DESCRIPTION "This is an extension module to set the osteotomy trajectory with multiple planes and clip with just one click.")
