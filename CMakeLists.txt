@@ -1,5 +1,6 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.20.6...3.22.6 FATAL_ERROR)
 
+project(ModelClip)
 #-----------------------------------------------------------------------------
 if(NOT Slicer_SOURCE_DIR)
   set(EXTENSION_NAME ModelClip)
