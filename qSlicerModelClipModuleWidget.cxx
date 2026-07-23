@@ -87,12 +87,12 @@ qSlicerModelClipModuleWidget::qSlicerModelClipModuleWidget(QWidget* _parent)
   //  return the reference to the renderWindow of the Slicer application singleton 
   //  and those to its renderer and renderWindowInteractor
   qSlicerApplication *app = qSlicerApplication::application();
-  qSlicerLayoutManager *layoutManager = app->layoutManager();
-  qMRMLThreeDWidget *threeDWidget = layoutManager->threeDWidget(0);
-  qMRMLThreeDView *threeDView = threeDWidget->threeDView();
-  this->renderWindow = threeDView->renderWindow();
-  this->renderer = this->renderWindow->GetRenderers()->GetFirstRenderer();
-  this->iren = this->renderWindow->GetInteractor();
+  qSlicerLayoutManager *layoutManager = app ? app->layoutManager() : nullptr;
+  qMRMLThreeDWidget *threeDWidget = layoutManager ? layoutManager->threeDWidget(0) : nullptr;
+  qMRMLThreeDView *threeDView = threeDWidget ? threeDWidget->threeDView() : nullptr;
+  this->renderWindow = threeDView ? threeDView->renderWindow() : nullptr;
+  this->renderer = this->renderWindow ? this->renderWindow->GetRenderers()->GetFirstRenderer() : nullptr;
+  this->iren = this->renderWindow ? this->renderWindow->GetInteractor() : nullptr;
 
   this->planeWidget = vtkSmartPointer<vtkPlaneWidgetSub>::New();
   this->planeWidget->SetInteractor(this->iren);
